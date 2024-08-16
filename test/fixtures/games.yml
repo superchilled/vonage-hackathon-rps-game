@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  opponent: MyString
+  channel: MyString
+  swag_status: MyString
+  player: one
+
+two:
+  status: MyString
+  opponent: MyString
+  channel: MyString
+  swag_status: MyString
+  player: two
