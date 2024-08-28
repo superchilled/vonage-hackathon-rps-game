@@ -13,6 +13,7 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    @player_id = params[:player_id]
   end
 
   # GET /games/1/edit
@@ -32,6 +33,12 @@ class GamesController < ApplicationController
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def start
+    @game = Game.find(params[:id])
+    @game.interface.start(@game)
+    redirect_to game_url(@game)
   end
 
   # PATCH/PUT /games/1 or /games/1.json

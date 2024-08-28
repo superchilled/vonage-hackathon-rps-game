@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-  resources :rounds
-  resources :games
-  resources :players
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :rounds
+  resources :games do
+    member do
+      patch :start
+    end
+  end
+  resources :players
+  
+  post "webhooks/voice" => "webhooks#voice"
+  post "webhooks/sms" => "webhooks#sms"
+  post "webhooks/status" => "webhooks#status"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

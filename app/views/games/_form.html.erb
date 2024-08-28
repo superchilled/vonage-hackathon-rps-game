@@ -1,4 +1,5 @@
 <%= form_with(model: game) do |form| %>
+  <%= form.hidden_field :player_id, value: @player_id %> 
   <% if game.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -11,10 +12,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :opponent, style: "display: block" %>
-    <%= form.text_field :opponent %>
-  </div>
+  <fieldset>
+    <legend>Choose an Opponent for this game</legend>
+    <div>
+      <%= form.label :opponent_andi, "Andi", style: "display: block" %>
+      <%= form.radio_button :opponent, "andi" %>
+      <%= form.label :opponent_ruby, "Ruby", style: "display: block" %>
+      <%= form.radio_button :opponent, "ruby" %>
+      <%= form.label :opponent_vai, "VAI", style: "display: block" %>
+      <%= form.radio_button :opponent, "vai" %>
+    </div>
+  </fieldset>
   <fieldset>
     <legend>Choose a Communication Channel for this game</legend>
     <div>
