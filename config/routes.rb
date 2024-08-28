@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :rounds
-  resources :games do
+  resources :games, except: [:index, :edit] do
     member do
       patch :start
     end
   end
   resources :players
   
+
   get "voyagers" => "pages#voyagers"
+  get "admin" => "games#index"
   post "webhooks/voice" => "webhooks#voice"
   post "webhooks/sms" => "webhooks#sms"
   post "webhooks/status" => "webhooks#status"

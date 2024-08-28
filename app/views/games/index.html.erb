@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Games</h1>
+<h1>Admin</h1>
 
 <div id="games">
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Opponent</th>
+    <th>Channel</th>
+    <th>Status</th>
+    <th>Swag Status</th>
+  </tr>
   <% @games.each do |game| %>
-    <%= render game %>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
+    <tr id="<%= dom_id game %>">
+      <td><%= game.player.name %></td>
+      <td><%= game.opponent %></td>
+      <td><%= game.channel %></td>
+      <td><%= game.status %></td>
+      <td><%= game.swag_status %></td>
+    </tr>
   <% end %>
+</table>
 </div>
 
-<%= link_to "New game", new_game_path %>
