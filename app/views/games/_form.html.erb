@@ -16,18 +16,18 @@
     <legend>Choose an Opponent for this game</legend>
     <div>
       <%= form.label :opponent_andi, "Andi", style: "display: block" %>
-      <%= form.radio_button :opponent, "andi" %>
+      <%= form.radio_button :opponent, "Andi" %>
       <%= form.label :opponent_ruby, "Ruby", style: "display: block" %>
-      <%= form.radio_button :opponent, "ruby" %>
+      <%= form.radio_button :opponent, "Ruby" %>
       <%= form.label :opponent_vai, "VAI", style: "display: block" %>
-      <%= form.radio_button :opponent, "vai" %>
+      <%= form.radio_button :opponent, "VAI" %>
     </div>
   </fieldset>
   <fieldset>
     <legend>Choose a Communication Channel for this game</legend>
     <div>
-      <%= form.label :channel_phone, "Phone", style: "display: block" %>
-      <%= form.radio_button :channel, "phone" %>
+      <%= form.label :channel_voice, "Voice Call", style: "display: block" %>
+      <%= form.radio_button :channel, "voice" %>
       <%= form.label :channel_sms, "SMS", style: "display: block" %>
       <%= form.radio_button :channel, "sms" %>
     </div>
