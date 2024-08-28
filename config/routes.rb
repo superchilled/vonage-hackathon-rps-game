@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :players
   
+  get "voyagers" => "pages#voyagers"
   post "webhooks/voice" => "webhooks#voice"
   post "webhooks/sms" => "webhooks#sms"
   post "webhooks/status" => "webhooks#status"

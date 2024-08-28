@@ -16,10 +16,6 @@ class GamesController < ApplicationController
     @player_id = params[:player_id]
   end
 
-  # GET /games/1/edit
-  def edit
-  end
-
   # POST /games or /games.json
   def create
     @game = Game.new(game_params)
@@ -38,7 +34,7 @@ class GamesController < ApplicationController
   def start
     @game = Game.find(params[:id])
     @game.interface.start(@game)
-    redirect_to game_url(@game)
+    redirect_to game_url(@game) , notice: "Game started."
   end
 
   # PATCH/PUT /games/1 or /games/1.json
