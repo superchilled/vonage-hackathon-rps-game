@@ -67,7 +67,14 @@ class Voice
     message = "I'm sorry, that was an invalid choice. Please reply with rock, paper, or scissors."
 
     ncco = [
-      { action: "talk", text: message }
+      { action: "talk", text: message },
+      {
+        action: "input",
+        type: ["speech"],
+        speech: {
+          context: ["rock", "paper", "scissors"]
+        }
+      }
     ]
 
     ncco.to_json
@@ -117,7 +124,14 @@ class Voice
     message = "You chose #{input}, #{game.opponent} chose #{computer_choice}. It's a draw! Please choose again. Reply with rock, paper, or scissors."
 
     ncco = [
-      { action: "talk", text: message }
+      { action: "talk", text: message },
+      {
+        action: "input",
+        type: ["speech"],
+        speech: {
+          context: ["rock", "paper", "scissors"]
+        }
+      }
     ]
 
     ncco.to_json
